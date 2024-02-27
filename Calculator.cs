@@ -5,11 +5,6 @@ namespace Calculator
 {
     public partial class Calculator : Form
     {
-        public static double a = 0;
-        public static double b = 0;
-        public static bool hasDot = false;
-        public static short sign = 0;
-
         public Calculator()
         {
             InitializeComponent();
@@ -60,10 +55,6 @@ namespace Calculator
 
         public void btnC_Click(object sender, EventArgs e)
         {
-            if (textBoxShow.Text.EndsWith("."))
-            {
-                hasDot = false;
-            }
             if (textBoxShow.Text.Length > 0)
                 textBoxShow.Text = textBoxShow.Text.Remove(textBoxShow.Text.Length - 1);
         }
@@ -71,10 +62,6 @@ namespace Calculator
         public void btnCL_Click(object sender, EventArgs e)
         {
             textBoxShow.Text = "";
-            hasDot = false;
-            a = 0;
-            b = 0;
-            sign = 0;
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
